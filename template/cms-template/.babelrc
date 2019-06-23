@@ -1,0 +1,41 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env"
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread",
+        "syntax-dynamic-import",
+        [
+            "babel-plugin-react-css-modules",
+            {
+                "generateScopedName": "[local]-[hash:base64:6]",
+                "filetypes": {
+                    ".less": {
+                        "syntax": "postcss-less"
+                    }
+                }
+            }
+        ],
+        [
+            "module-resolver",
+            {
+                "root": ["."],
+                "alias": {
+                    "@": "./src"
+                }
+            }
+        ],
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "style": true
+            }
+        ]
+    ]
+}
