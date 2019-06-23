@@ -28,7 +28,7 @@ function tranform(metadata = {}, templatePath, destPath) {
     if (!src) {
         return Promise.reject(new Error(`无效的src地址: ${src}`));
     }
-    console.log('begin transrm', src);
+    console.log(chalk.green(`begin download:' ${src}`));
 
     return new Promise((resolve, reject) => {
         Metalsmith(process.cwd())
@@ -38,9 +38,11 @@ function tranform(metadata = {}, templatePath, destPath) {
             .use((files, metalsmith, done) => {
                 const meta = metalsmith.metadata();
                 Object.keys(files).forEach(fileName => {
-                    const t = files[fileName].contents.toString();
-                    if (!/^.*\.(jpg|png|svg)$/.test(fileName)) {
-                        files[fileName].contents = new Buffer(ejs.render(t, metadata));
+                    if (!fileName.includes('node_modules')) {
+                        const t = files[fileName].contents.toString();
+                        if (!/^.*\.(jpg|png|svg)$/.test(fileName)) {
+                            files[fileName].contents = new Buffer(ejs.render(t, metadata));
+                        }
                     }
                 })
                 done()
@@ -58,7 +60,6 @@ module.exports = function (metadata = {}, template, destPath) {
 
     const tplPath = path.resolve(__dirname, '../../template/');
     const absolutePath = path.resolve(destPath);
-    console.log('absolutePath', absolutePath);
 
     // download(destPath).then(() => {
         tranform(metadata, `${tplPath}/${template}`, destPath)

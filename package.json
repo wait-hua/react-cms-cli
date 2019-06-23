@@ -1,7 +1,7 @@
 {
-  "name": "cli-demo",
+  "name": "react-cms-cli",
   "version": "0.0.1",
-  "description": "a demo of cli tool",
+  "description": "a cli tool for quickly create a react-cms project",
   "main": "index.js",
   "bin": {
     "react-cms": "bin/react-cms"

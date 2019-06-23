@@ -15,7 +15,6 @@ program.command('init')
     .description('Generate a new project')
     .alias('i')
     .action(() => {
-        console.log('begin init')
         require(choice('init'))
     });
 
