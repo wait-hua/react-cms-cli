@@ -10,6 +10,7 @@ module.exports = {
     output: {
         hashDigestLength: 8,
         filename: '[name].[chunkhash:8].js',
+        chunkFilename: '[name].[chunkhash:5].chunk.js',
         path: getAbsolutePath('../dist')
     },
     resolve: {

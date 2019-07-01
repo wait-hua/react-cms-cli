@@ -1,15 +1,17 @@
 import React, { PureComponent } from 'react';
 import { Route, NavLink } from 'dva/router';
 import { Menu, Icon } from 'antd';
+import loadable from '@loadable/component';
 import PropTypes from 'prop-types';
 import { connect } from 'dva';
 import Dashboard from '@/pages/dashboard';
-import DemoOne from '@/pages/demo/demoOne';
-import DemoTwo from '@/pages/demo/demoTwo';
 import './app.less';
 
+const DemoOne = loadable(() => import(/* webpackChunkName: "demoOne" */'@/pages/demo/demoOne'));
+const DemoTwo = loadable(() => import(/* webpackChunkName: "demoTwo" */'@/pages/demo/DemoTwo'));
+
 const MenuItem = Menu.Item;
-const {SubMenu} = Menu;
+const { SubMenu } = Menu;
 /* eslint-disable react/prefer-stateless-function */
 class App extends PureComponent {
 
