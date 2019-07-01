@@ -31,3 +31,5 @@ jsconfig.json
 dist
 dev-server-proxy.json
 dest
+test
+private

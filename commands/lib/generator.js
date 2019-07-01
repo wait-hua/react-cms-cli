@@ -62,7 +62,7 @@ module.exports = function (metadata = {}, template, destPath) {
     const absolutePath = path.resolve(destPath);
 
     // download(destPath).then(() => {
-        tranform(metadata, `${tplPath}/${template}`, destPath)
+    return tranform(metadata, `${tplPath}/${template}`, destPath)
             .then(() => {
                 spinner.stop();
                 console.log(chalk.green('project init successfully!'));

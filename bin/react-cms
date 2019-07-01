@@ -9,13 +9,21 @@ const choice = command => path.resolve(__dirname, '../commands/', command);
 
 program.version(require('../package.json').version);
 program.usage('<command>');
-
+// 新建项目
 program.command('init')
     .option('-f, --foo', 'enable some foo')
     .description('Generate a new project')
     .alias('i')
     .action(() => {
         require(choice('init'))
+    });
+// 新建页面
+program.command('page')
+    .option('-f, --foo', 'enable some foo')
+    .description('Generate a new page')
+    .alias('p')
+    .action(() => {
+        require(choice('page'))
     });
 
 program.parse(process.argv);
