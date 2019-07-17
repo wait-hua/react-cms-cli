@@ -9,7 +9,7 @@
     "start": "npm run clean && webpack-dev-server",
     "analyzer": "npm run clean && webpack --env.analyzer --progress --profile --json > ./dist/stats.json && webpack-bundle-analyzer ./dist/stats.json -m static -r ./dist/report.html",
     "test": "npm run lint && npm run lint:style",
-    "lint": "eslint \"src/**/*.+(js|ts|tsx|jsx)\" \"build/**/*.js\" --fix",
+    "lint": "eslint \"src/**/*.+(js|ts|tsx|jsx)\" --fix",
     "lint:style": "stylelint \"src/**/*.less\" --syntax less",
     "lint:ts": "eslint \"src/**/*.+(ts|tsx)\" --fix",
     "typecheck": "tsc --noEmit",
