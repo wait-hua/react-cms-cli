@@ -8,7 +8,7 @@ import Dashboard from '@/pages/dashboard';
 import './app.less';
 
 const DemoOne = loadable(() => import(/* webpackChunkName: "demoOne" */'@/pages/demo/demoOne'));
-const DemoTwo = loadable(() => import(/* webpackChunkName: "demoTwo" */'@/pages/demo/DemoTwo'));
+const DemoTwo = loadable(() => import(/* webpackChunkName: "demoTwo" */'@/pages/demo/demoTwo'));
 
 const MenuItem = Menu.Item;
 const { SubMenu } = Menu;

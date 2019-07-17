@@ -9,7 +9,7 @@ const common = require('./webpack.common.js');
 module.exports = () => merge(common, {
     mode: 'production',
     output: {
-        publicPath: '/monitor/'
+        publicPath: '/'
     },
     devtool: false,
     plugins: [

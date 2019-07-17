@@ -22,11 +22,5 @@ jsconfig.json
 # macos
 .DS_Store
 
-# elint
-/.commitlintrc.js
-/.eslintrc.js
-/.huskyrc.js
-/.stylelintrc.js
-
 dist
 dev-server-proxy.json

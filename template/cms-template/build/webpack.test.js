@@ -6,7 +6,7 @@ const common = require('./webpack.common.js');
 module.exports = () => merge(common, {
     mode: 'development',
     output: {
-        publicPath: '/monitor/'
+        publicPath: '/'
     },
     devtool: 'inline-source-map',
     plugins: [
